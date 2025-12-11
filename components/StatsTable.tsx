@@ -28,11 +28,11 @@ const StatsTable: React.FC<Props> = ({ stats }) => {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-50 text-gray-600 text-sm border-b">
-              <th className="p-4 font-semibold text-center border-r">類別 (1-6)</th>
-              <th className="p-4 font-bold text-center border-r bg-green-50 text-green-700">2等員額 (F)</th>
-              <th className="p-4 font-bold text-center border-r bg-yellow-50 text-yellow-700">3等員額 (H)</th>
-              <th className="p-4 font-bold text-center border-r bg-orange-50 text-orange-700">4等員額 (I)</th>
-              <th className="p-4 font-bold text-center bg-red-50 text-red-700">5等員額 (J)</th>
+              <th className="p-4 font-semibold text-center border-r">類別</th>
+              <th className="p-4 font-bold text-center border-r bg-green-50 text-green-700">2等員額</th>
+              <th className="p-4 font-bold text-center border-r bg-yellow-50 text-yellow-700">3等員額</th>
+              <th className="p-4 font-bold text-center border-r bg-orange-50 text-orange-700">4等員額</th>
+              <th className="p-4 font-bold text-center bg-red-50 text-red-700">5等員額</th>
             </tr>
           </thead>
           <tbody className="text-sm divide-y divide-gray-100">

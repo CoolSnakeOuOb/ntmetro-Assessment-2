@@ -20,13 +20,23 @@ function App() {
   
   // Supervisor Data State with LocalStorage Persistence
   const [employees, setEmployees] = useState<EmployeeData[]>(() => {
-    const saved = localStorage.getItem('ntmc_employees');
-    return saved ? JSON.parse(saved) : [];
+    try {
+        const saved = localStorage.getItem('ntmc_employees');
+        return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+        console.error("Failed to load employees from local storage", e);
+        return [];
+    }
   });
   
   const [stats, setStats] = useState<AllocationStats[]>(() => {
-    const saved = localStorage.getItem('ntmc_stats');
-    return saved ? JSON.parse(saved) : [];
+    try {
+        const saved = localStorage.getItem('ntmc_stats');
+        return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+        console.error("Failed to load stats from local storage", e);
+        return [];
+    }
   });
 
   const [currentView, setCurrentView] = useState<'list' | 'stats'>('list');
@@ -35,9 +45,13 @@ function App() {
 
   // Restore session
   useEffect(() => {
-    const savedUser = sessionStorage.getItem('loggedInUser');
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
+    try {
+        const savedUser = sessionStorage.getItem('loggedInUser');
+        if (savedUser) {
+          setUser(JSON.parse(savedUser));
+        }
+    } catch (e) {
+        console.error("Failed to restore session", e);
     }
   }, []);
 

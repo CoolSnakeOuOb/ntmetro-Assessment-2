@@ -333,7 +333,7 @@ export function generateCSV(data: EmployeeData[]) {
 
 // 6. Generate Stats Excel
 export function generateStatsExcel(stats: AllocationStats[]) {
-    const headers = ["類別 (1-6)", "2等員額 (F)", "3等員額 (H)", "4等員額 (I)", "5等員額 (J)"];
+    const headers = ["類別", "2等員額", "3等員額", "4等員額", "5等員額"];
     const rows: (string | number)[][] = [headers];
     stats.forEach(r => {
         rows.push([
